@@ -7,6 +7,11 @@ const mongoose = require('mongoose');
 const { urlencoded, json } = require('body-parser');
 const cors = require('cors');
 const fileUpload = require('express-fileupload');
+app.use(cors({
+  origin: 'https://e-commerce-website-of-nike.vercel.app',
+  methods: ['POST'],
+  credentials: true,
+}));
 
 const uri = 'mongodb+srv://shahzebraheel61:shahzaib1044@cluster0.luve38r.mongodb.net/?retryWrites=true&w=majority&ssl=true';
 
