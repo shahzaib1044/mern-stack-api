@@ -1,14 +1,14 @@
 const mongoose = require('mongoose');
 
 
- CartItemSchema = new mongoose.Schema({
+ const CartItemSchema = new mongoose.Schema({
   image: String,
   name: String,
   size: String,
   price: Number,
 });
 
- PaymentSummaryPageSchema = new mongoose.Schema({
+  const PaymentSummaryPageSchema = new mongoose.Schema({
   name: String,
   country: String,
   city: String,
