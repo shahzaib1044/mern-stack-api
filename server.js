@@ -13,18 +13,18 @@ const app = require('./app');
 
 
 // Database connection
-const uri = 'mongodb+srv://shahzebraheel61:shahzaib1044@cluster0.luve38r.mongodb.net/?retryWrites=true&w=majority&ssl=true';
+// const uri = 'mongodb+srv://shahzebraheel61:shahzaib1044@cluster0.luve38r.mongodb.net/?retryWrites=true&w=majority&ssl=true';
 
-mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => {
-    console.log('Connected to MongoDB');
-  })
-  .catch((error) => {
-    console.error('Error connecting to MongoDB:', error);
-  }); 
+// mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
+//   .then(() => {
+//     console.log('Connected to MongoDB');
+//   })
+//   .catch((error) => {
+//     console.error('Error connecting to MongoDB:', error);
+//   }); 
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
   res.json("Hello");
