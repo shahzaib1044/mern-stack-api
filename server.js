@@ -91,7 +91,7 @@ const ContactusSchema = new mongoose.Schema({
 
 const Contactus = mongoose.model("Contactus", ContactusSchema);
 
-app.post("/contactus", async (req, res) => {
+app.post("/Contactus", async (req, res) => {
   try {
     const { name, email, message } = req.body;
 
