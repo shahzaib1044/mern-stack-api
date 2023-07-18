@@ -9,17 +9,15 @@ const { urlencoded, json } = require('body-parser');
 const cors = require('cors');
 const fileUpload = require('express-fileupload');
 
+const uri = 'mongodb+srv://shahzebraheel61:shahzaib1044@cluster0.luve38r.mongodb.net/?retryWrites=true&w=majority&ssl=true';
 
-mongoose.connect('',{useNewUrlParser:true, useUnifiedTopology: true});
-
-
-mongoose.connection.on('error',err=>{
-  console.log('connection failed');
-});
-
-mongoose.connection.on('connected',()=>{
-  console.log('connected successfully with database');
-});
+mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => {
+    console.log('Connected to MongoDB');
+  })
+  .catch((error) => {
+    console.error('Error connecting to MongoDB:', error);
+  }); 
 
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
