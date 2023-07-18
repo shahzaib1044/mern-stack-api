@@ -6,9 +6,7 @@ require("dotenv").config();
 const cors = require('cors');
 
 app.use(cors({
-  origin: 'https://e-commerce-website-of-nike.vercel.app',
-  methods: ['POST'],
-  credentials: true,
+  
 }));
 
 
@@ -16,17 +14,7 @@ app.use(cors({
 
 // ... Rest of your code ...
 
-const { createProxyMiddleware } = require('http-proxy-middleware');
 
-// ...
-
-app.use(
-  '/Contactus',
-  createProxyMiddleware({
-    target: 'https://e-commerce-website-of-nike-api.vercel.app',
-    changeOrigin: true,
-  })
-);
 
 
 // Database connection
@@ -66,7 +54,7 @@ app.post('/Signup', async (req, res) => {
     });
 
     newSignup = await newSignup.save();
-     res.setHeader('Access-Control-Allow-Origin', 'https://e-commerce-website-of-nike.vercel.app');
+   
     res.send(newSignup);
   } catch (error) {
     console.error(error);
@@ -81,7 +69,7 @@ app.post('/Signin', async (req, res) => {
 
     if (signup) {
       // Signin successful
-      res.setHeader('Access-Control-Allow-Origin', 'https://e-commerce-website-of-nike.vercel.app');
+      
       res.sendStatus(200);
     } else {
       // Signin failed
@@ -112,7 +100,7 @@ app.post("/contactus", async (req, res) => {
     });
 
     const savedContactus = await newContactus.save();
-     res.setHeader('Access-Control-Allow-Origin', 'https://e-commerce-website-of-nike.vercel.app');
+     
     res.status(200).json(savedContactus);
   } catch (error) {
     console.error("Failed to save contact message:", error);
@@ -153,7 +141,7 @@ app.post('/PaymentSummaryPage', async (req, res) => {
     });
 
     const savedPaymentSummaryPage = await newPaymentSummaryPage.save();
-     res.setHeader('Access-Control-Allow-Origin', 'https://e-commerce-website-of-nike.vercel.app');
+    
     res.status(200).json(savedPaymentSummaryPage);
   } catch (error) {
     console.error('Failed to save payment summary:', error);
