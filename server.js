@@ -2,6 +2,11 @@
 
 const http = require('http');
 const app = require('./app');
+const port = process.env.PORT || 3000;
+
+
+const server = http.createServer(app);
+server.listen(port,()=>{console.log('this app is running on '+port)});
 
 
 
@@ -144,8 +149,8 @@ app.get("/", (req, res) => {
 //   }
 // });
 
-const port = process.env.PORT || 3001;
+// const port = process.env.PORT || 3001;
 
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
-});
+// app.listen(port, () => {
+//   console.log(`Server running on port ${port}`);
+// });
