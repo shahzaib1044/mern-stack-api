@@ -26,7 +26,7 @@ app.use(fileUpload({
 
 app.use(cors());
 
-app.use('/product', productRoute);
+app.use('/Contactus', ContactusRoute);
 app.use('/user', userRoute);
 app.use('/category', categoryPath);
 
